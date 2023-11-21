@@ -1,0 +1,113 @@
+/* styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .add-blog-btn {
+    font-size: 24px;
+    cursor: pointer;
+    margin: 20px;
+    background-color: darkblue;
+    border: 1px solid darkblue;
+    border-radius: 5px;
+    color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .add-blog-btn:hover {
+    background-color: #001f3f;
+    color: rgb(158, 158, 143);
+  }
+  
+  .modal {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .modal.show-modal {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .submit-btn,
+  .cancel-btn {
+    padding: 10px;
+    cursor: pointer;
+    background-color: darkblue;
+    border: 1px solid darkblue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .submit-btn:hover,
+  .cancel-btn:hover {
+    background-color: #001f3f;
+    color: rgb(158, 158, 143);
+  }
+  
+  .blogs-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 20px;
+  }
+  
+  article {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex;
+    align-items: start;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .delete-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-inline: auto;
+  }
+  
+  .delete-btn:hover {
+    background-color: #d32f2f;
+  }
+  

@@ -1,0 +1,38 @@
+<!-- HTML faylı -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog App</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  
+  <button class="add-blog-btn">
+    +
+  </button>
+
+  <div class="modal">
+    <form id="blogForm">
+      <label>Blog title:</label>
+      <input type="text" id="titleInput">
+
+      <label>Blog content</label>
+      <textarea type="text" id="contentInput" cols="20" rows="10"></textarea>
+
+      <label>Blog date</label>
+      <input type="date" id="dateInput">
+
+      <button type="button" class="submit-btn" id="submitBtn">Submit</button>
+
+      <div class="cancel-btn" id="cancelBtn">Cancel</div>
+    </form>
+  </div>
+
+  <div class="blogs-container">
+    
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>
