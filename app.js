@@ -102,7 +102,42 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
         }
     }
+    // Search Əlavə et (Orxan m)
+    const searchText = document.querySelector(".search-text");
+    const searchDate = document.querySelector(".search-date");
 
+    const searchBtn = document.querySelector(".search-btn");
+    searchBtn.addEventListener("click", () => {
+        const searchTextValue = searchText.value;
+        const searchDateValue = searchDate.value;
+
+        if (searchTextValue && searchDateValue) {
+            fetch('http://localhost:3000/blogPosts')
+                .then(response => response.json())
+                .then(blogData => {
+                    const filteredData = filterBlogData(blogData, searchTextValue, searchDateValue);
+                    displayBlogPosts(filteredData);
+                })
+                .catch(error => {
+                    console.error('Error loading blog data:', error);
+                });
+        } else {
+            // Her iki input da boşsa bir uyarı verebilir veya başka bir işlem yapabilirsiniz.
+            alert('Please enter search both criterias.');
+        }
+    });
+
+    // Filtreleme Fonksiyonu
+    function filterBlogData(blogData, searchTextValue, searchDateValue) {
+        return blogData.filter(post => {
+            const titleMatches = post.title.toLowerCase().includes(searchTextValue.toLowerCase());
+            const dateMatches = searchDateValue ? post.date === searchDateValue : true;
+            return titleMatches && dateMatches;
+        });
+    }
+
+
+    
     // İlk yükləmə zamanı məlumatları göstərmək üçün
     loadBlogData();
 });
